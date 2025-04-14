@@ -125,7 +125,36 @@ $(function () {
         let pwd = $(this).siblings('input[name="pwd"]').val()
         let result1 = username.length > 0 && pwd.length > 0
         if (result1) {
-            alert('登录成功！')
+            // 调用后端登录接口
+            console.log("发送登录请求...");
+            $.ajax({
+                type: "POST",
+                url: "/api/user/login",
+                data: $.param({
+                    username: username,
+                    password: pwd
+                }),
+                contentType: "application/x-www-form-urlencoded",
+                dataType: "json",
+                success: function(response) {
+                    console.log("登录响应:", response);
+                    if (response.code === 200) {
+                        // 登录成功，保存用户信息到本地存储
+                        localStorage.setItem("userInfo", JSON.stringify(response.data));
+                        alert('登录成功！');
+                        // 跳转到首页
+                        window.location.href = "/index.html";
+                    } else {
+                        // 登录失败，显示错误信息
+                        alert(response.message || '登录失败，请检查用户名和密码！');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("登录请求失败:", status, error);
+                    console.log("响应内容:", xhr.responseText);
+                    alert('网络错误，请稍后重试！');
+                }
+            });
         } else {
             alert('信息填写不完整，请检查！')
         }
@@ -159,7 +188,36 @@ $(function () {
         }
 
         if (result == '') {
-            alert('注册成功！')
+            // 调用后端注册接口
+            console.log("发送注册请求...");
+            $.ajax({
+                type: "POST",
+                url: "/api/user/register",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    username: username,
+                    password: pwd,
+                    email: email
+                }),
+                dataType: "json",
+                success: function(response) {
+                    console.log("注册响应:", response);
+                    if (response.code === 200) {
+                        alert('注册成功！');
+                        // 切换到登录页面
+                        $('.register-sec').removeClass('active');
+                        $('.login-sec').addClass('active');
+                        $('.page-login .layer-form').addClass('active');
+                    } else {
+                        alert(response.message || '注册失败，请稍后重试！');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("注册请求失败:", status, error);
+                    console.log("响应内容:", xhr.responseText);
+                    alert('网络错误，请稍后重试！');
+                }
+            });
         } else {
             alert(result)
         }

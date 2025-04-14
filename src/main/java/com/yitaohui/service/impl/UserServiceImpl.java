@@ -26,14 +26,10 @@ public class UserServiceImpl implements UserService {
             return ResponseResult.error("用户名已存在");
         }
         
-        // 密码加密
-        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
-        user.setPassword(md5Password);
-        
         // 设置默认角色
         user.setRole("user");
         
-        // 插入用户
+        // 插入用户（不进行密码加密，直接存储明文密码）
         userMapper.insert(user);
         
         // 清空密码
@@ -42,6 +38,11 @@ public class UserServiceImpl implements UserService {
         return ResponseResult.success(user);
     }
 
+    /**
+     * 临时测试用登录方法，不进行密码加密
+     */
+    // 注释掉正式方法，使用测试方法
+    /*
     @Override
     public ResponseResult<User> login(String username, String password) {
         // 查询用户
@@ -50,8 +51,13 @@ public class UserServiceImpl implements UserService {
             return ResponseResult.error("用户不存在");
         }
         
-        // 验证密码
+        // 调试日志
+        System.out.println("输入的原始密码: " + password);
         String md5Password = DigestUtils.md5DigestAsHex(password.getBytes());
+        System.out.println("加密后的密码: " + md5Password);
+        System.out.println("数据库中的密码: " + user.getPassword());
+        
+        // 验证密码
         if (!user.getPassword().equals(md5Password)) {
             return ResponseResult.error("密码错误");
         }
@@ -60,6 +66,27 @@ public class UserServiceImpl implements UserService {
         user.setPassword(null);
         
         return ResponseResult.success(user);
+    }
+    */
+    
+    // 临时测试用方法
+    @Override
+    public ResponseResult<User> login(String username, String password) {
+        // 查询用户
+        User user = userMapper.selectByUsername(username);
+        if (user == null) {
+            return ResponseResult.error("用户不存在");
+        }
+        
+        // 直接比较明文密码
+        if (password.equals(user.getPassword())) {
+            // 登录成功，清空密码
+            user.setPassword(null);
+            return ResponseResult.success(user);
+        } else {
+            // 密码错误
+            return ResponseResult.error("密码错误");
+        }
     }
 
     @Override
@@ -100,17 +127,15 @@ public class UserServiceImpl implements UserService {
             return ResponseResult.error("用户不存在");
         }
         
-        // 验证旧密码
-        String md5OldPassword = DigestUtils.md5DigestAsHex(oldPassword.getBytes());
-        if (!user.getPassword().equals(md5OldPassword)) {
+        // 验证旧密码（直接明文比较）
+        if (!user.getPassword().equals(oldPassword)) {
             return ResponseResult.error("原密码错误");
         }
         
-        // 更新密码
-        String md5NewPassword = DigestUtils.md5DigestAsHex(newPassword.getBytes());
+        // 更新密码（不进行加密）
         User updateUser = new User();
         updateUser.setId(userId);
-        updateUser.setPassword(md5NewPassword);
+        updateUser.setPassword(newPassword);
         
         userMapper.update(updateUser);
         
