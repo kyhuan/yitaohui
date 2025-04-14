@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yitaohui.mapper.OrderMapper">
+    
+    <resultMap id="BaseResultMap" type="com.yitaohui.model.Order">
+        <id property="id" column="id"/>
+        <result property="orderNo" column="order_no"/>
+        <result property="userId" column="user_id"/>
+        <result property="totalPrice" column="total_price"/>
+        <result property="paymentPrice" column="payment_price"/>
+        <result property="paymentType" column="payment_type"/>
+        <result property="status" column="status"/>
+        <result property="shippingName" column="shipping_name"/>
+        <result property="shippingPhone" column="shipping_phone"/>
+        <result property="shippingAddress" column="shipping_address"/>
+        <result property="paymentTime" column="payment_time"/>
+        <result property="shippingTime" column="shipping_time"/>
+        <result property="receiveTime" column="receive_time"/>
+        <result property="closeTime" column="close_time"/>
+        <result property="createdTime" column="created_time"/>
+        <result property="updatedTime" column="updated_time"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+        id, order_no, user_id, total_price, payment_price, payment_type, status, 
+        shipping_name, shipping_phone, shipping_address, payment_time, shipping_time,
+        receive_time, close_time, created_time, updated_time
+    </sql>
+    
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT <include refid="Base_Column_List"/>
+        FROM orders
+        WHERE id = #{id}
+    </select>
+    
+    <select id="selectByOrderNo" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM orders
+        WHERE order_no = #{orderNo}
+        <if test="userId != null">
+            AND user_id = #{userId}
+        </if>
+    </select>
+    
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM orders
+        WHERE user_id = #{userId}
+        <if test="status != null">
+            AND status = #{status}
+        </if>
+        ORDER BY created_time DESC
+    </select>
+    
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM orders
+        <where>
+            <if test="status != null">
+                status = #{status}
+            </if>
+        </where>
+        ORDER BY created_time DESC
+    </select>
+    
+    <insert id="insert" parameterType="com.yitaohui.model.Order" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO orders (
+            order_no, user_id, total_price, payment_price, payment_type, status,
+            shipping_name, shipping_phone, shipping_address
+        )
+        VALUES (
+            #{orderNo}, #{userId}, #{totalPrice}, #{paymentPrice}, #{paymentType}, #{status},
+            #{shippingName}, #{shippingPhone}, #{shippingAddress}
+        )
+    </insert>
+    
+    <update id="update" parameterType="com.yitaohui.model.Order">
+        UPDATE orders
+        <set>
+            <if test="totalPrice != null">total_price = #{totalPrice},</if>
+            <if test="paymentPrice != null">payment_price = #{paymentPrice},</if>
+            <if test="paymentType != null">payment_type = #{paymentType},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="shippingName != null">shipping_name = #{shippingName},</if>
+            <if test="shippingPhone != null">shipping_phone = #{shippingPhone},</if>
+            <if test="shippingAddress != null">shipping_address = #{shippingAddress},</if>
+            <if test="paymentTime != null">payment_time = #{paymentTime},</if>
+            <if test="shippingTime != null">shipping_time = #{shippingTime},</if>
+            <if test="receiveTime != null">receive_time = #{receiveTime},</if>
+            <if test="closeTime != null">close_time = #{closeTime},</if>
+            updated_time = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+    
+    <update id="updateStatus">
+        UPDATE orders
+        SET status = #{status},
+        <choose>
+            <when test="status == 1">payment_time = NOW(),</when>
+            <when test="status == 2">shipping_time = NOW(),</when>
+            <when test="status == 3">receive_time = NOW(),</when>
+            <when test="status == 5">close_time = NOW(),</when>
+        </choose>
+        updated_time = NOW()
+        WHERE order_no = #{orderNo}
+    </update>
+    
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        DELETE FROM orders WHERE id = #{id}
+    </delete>
+    
+    <select id="countByUserId" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM orders
+        WHERE user_id = #{userId}
+        <if test="status != null">
+            AND status = #{status}
+        </if>
+    </select>
+    
+    <select id="countAll" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM orders
+        <where>
+            <if test="status != null">
+                status = #{status}
+            </if>
+        </where>
+    </select>
+    
+</mapper> 

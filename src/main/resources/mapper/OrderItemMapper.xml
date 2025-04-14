@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yitaohui.mapper.OrderItemMapper">
+    
+    <resultMap id="BaseResultMap" type="com.yitaohui.model.OrderItem">
+        <id property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="productName" column="product_name"/>
+        <result property="productImage" column="product_image"/>
+        <result property="price" column="price"/>
+        <result property="quantity" column="quantity"/>
+        <result property="totalPrice" column="total_price"/>
+        <result property="createdTime" column="created_time"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+        id, order_id, product_id, product_name, product_image, price, quantity, total_price, created_time
+    </sql>
+    
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT <include refid="Base_Column_List"/>
+        FROM order_items
+        WHERE id = #{id}
+    </select>
+    
+    <select id="selectByOrderId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT <include refid="Base_Column_List"/>
+        FROM order_items
+        WHERE order_id = #{orderId}
+    </select>
+    
+    <insert id="insert" parameterType="com.yitaohui.model.OrderItem" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO order_items (
+            order_id, product_id, product_name, product_image, price, quantity, total_price
+        )
+        VALUES (
+            #{orderId}, #{productId}, #{productName}, #{productImage}, #{price}, #{quantity}, #{totalPrice}
+        )
+    </insert>
+    
+    <insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO order_items (
+            order_id, product_id, product_name, product_image, price, quantity, total_price
+        )
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.orderId}, #{item.productId}, #{item.productName}, #{item.productImage}, 
+            #{item.price}, #{item.quantity}, #{item.totalPrice}
+            )
+        </foreach>
+    </insert>
+    
+    <update id="update" parameterType="com.yitaohui.model.OrderItem">
+        UPDATE order_items
+        <set>
+            <if test="productName != null">product_name = #{productName},</if>
+            <if test="productImage != null">product_image = #{productImage},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="quantity != null">quantity = #{quantity},</if>
+            <if test="totalPrice != null">total_price = #{totalPrice},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+    
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        DELETE FROM order_items WHERE id = #{id}
+    </delete>
+    
+    <delete id="deleteByOrderId" parameterType="java.lang.Integer">
+        DELETE FROM order_items WHERE order_id = #{orderId}
+    </delete>
+    
+</mapper> 

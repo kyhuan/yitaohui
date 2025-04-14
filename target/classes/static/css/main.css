@@ -1,0 +1,2165 @@
+.header-top {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+
+.header-top .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 34px;
+}
+
+.header-top .container .right {
+    display: flex;
+}
+
+.header-top .container .right a {
+    padding: 0 10px 0 15px;
+    margin: 9px 0 8px;
+    border-right: solid 1px #ccc;
+    transition: all 0.3s ease;
+}
+
+.header-top .container .right a:hover,
+.header-top .container .right a.active {
+    color: var(--themeColor);
+}
+
+.header-top .container .right a:last-child {
+    border-right: none;
+}
+
+.header-middle {
+    background: white;
+}
+
+.header-middle .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+}
+
+.header-middle a.logo img {
+    height: 74px;
+}
+
+.header-middle .search form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header-middle .search form .iconfont {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.header-middle .search form input {
+    width: 420px;
+    height: 40px;
+    padding-left: 32px;
+    font-size: 14px;
+    float: right;
+    border: 2px solid var(--themeColor);
+}
+
+.header-middle .search form button {
+    width: 125px;
+    height: 40px;
+    background-color: var(--themeColor);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.header-middle a.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.header-middle a.cart .iconfont {
+    font-size: 16px;
+    margin-right: 5px;
+    color: var(--themeColor);
+}
+
+.header-middle a.cart span {
+    padding: 0 8px;
+    font-size: 16px;
+    color: var(--themeColor);
+}
+
+.header-middle a.cart:hover {
+    border-color: var(--themeColor);
+}
+
+.header {
+    position: relative;
+    z-index: 99;
+    background: white;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--themeColor);
+}
+
+.header .container {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.header .cate {
+    position: relative;
+}
+
+.header .cate>span {
+    display: flex;
+    align-items: center;
+    width: 214px;
+    height: 40px;
+    background: var(--themeColor);
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.header .cate>span .iconfont {
+    margin-right: 12px;
+}
+
+.header .cate .cate-detail {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 480px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+}
+
+.header .cate.style2 .cate-detail {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.header .cate.style2:hover .cate-detail {
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: all;
+}
+
+.header .cate .cate-detail .item {
+    padding: 8px 8px 8px 15px;
+}
+
+.header .cate .cate-detail .item a.fir {
+    font-size: 15px;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.header .cate .cate-detail .item .sub {
+    margin-top: 8px;
+}
+
+.header .cate .cate-detail .item .sub a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.header .cate .cate-detail .item a.fir:hover,
+.header .cate .cate-detail .item .sub a:hover {
+    color: var(--themeColor);
+}
+
+.header ul.menu {
+    display: flex;
+    align-items: center;
+}
+
+.header ul.menu li {
+    margin-left: 30px;
+}
+
+.header ul.menu li a {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.header ul.menu li a:hover,
+.header ul.menu li.active a {
+    color: var(--themeColor);
+}
+
+.index-banner {
+    height: 480px;
+    background: rgb(229, 238, 245);
+}
+
+.index-banner .container {
+    padding: 10px 0 10px 224px;
+    display: flex;
+}
+
+.index-banner .swiper {
+    width: 100%;
+    user-select: none;
+}
+
+.index-banner .swiper img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+}
+
+.index-recommend {
+    margin-top: 15px;
+}
+
+.index-recommend .container {
+    display: flex;
+    gap: 15px;
+}
+
+.index-recommend a {
+    display: block;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.index-recommend a .layer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--themeColor2);
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    line-height: 1.5;
+    text-align: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.index-recommend a:hover .layer {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.index-recommend a:hover img {
+    transform: scale(1.1);
+}
+
+.index-sec1 {
+    margin-top: 30px;
+}
+
+.index-sec1 .container {
+    background: white;
+}
+
+.index-sec1 .item-all {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.index-sec1 .item-all a.item {
+    display: block;
+    width: 20%;
+    border-right: 1px solid #dfdfdf;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 15px 10px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.index-sec1 .item-all a.item:nth-child(1),
+.index-sec1 .item-all a.item:nth-child(2),
+.index-sec1 .item-all a.item:nth-child(3),
+.index-sec1 .item-all a.item:nth-child(4),
+.index-sec1 .item-all a.item:nth-child(5) {
+    border-bottom: none !important;
+}
+
+.index-sec1 .item-all a.item:nth-of-type(5n+1) {
+    border-left: 1px solid #dfdfdf;
+}
+
+.index-sec1 .item-all a.item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    opacity: 0;
+    border-left: 2px solid var(--themeColor);
+    border-top: 2px solid var(--themeColor);
+    transition: all 0.5s ease;
+}
+
+.index-sec1 .item-all a.item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    opacity: 0;
+    border-right: 2px solid var(--themeColor);
+    border-bottom: 2px solid var(--themeColor);
+    transition: all 0.5s ease;
+}
+
+.index-sec1 .item-all a.item:hover:before,
+.index-sec1 .item-all a.item:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.index-sec1 .item-all a.item .box-img {
+    padding: 15px;
+    font-size: 0;
+}
+
+.index-sec1 .item-all a.item .box-img img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+
+.index-sec1 .item-all a.item:hover .box-img img {
+    transform: scale(0.9);
+}
+
+.index-sec1 .item-all a.item h3 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    transition: all 0.4s ease;
+}
+
+.index-sec1 .item-all a.item:hover h3 {
+    color: var(--themeColor);
+}
+
+.index-sec1 .item-all a.item .price {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+    color: var(--themeColor);
+}
+
+.index-sec1 .item-all a.item .price span {
+    padding-left: 10px;
+    font-size: 16px;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.index-sec2 {
+    margin-bottom: 30px;
+}
+
+.footer {
+    background: #eaeaea;
+}
+
+.footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.footer .footer-top .item {
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-top .item .iconfont {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    margin-right: 10px;
+    border: 2px solid var(--themeColor);
+    color: var(--themeColor);
+    transition: all 0.4s ease;
+    font-weight: bold;
+}
+
+.footer .footer-top .item .title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.footer .footer-top .item .desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6d6d6d;
+    white-space: nowrap;
+}
+
+.footer .footer-middle {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0 30px 0;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.footer .footer-middle h3 {
+    font-size: 18px;
+    color: black;
+    font-weight: normal;
+}
+
+.footer .footer-middle ul {
+    margin-top: 15px;
+}
+
+.footer .footer-middle ul a {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.footer .footer-middle ul a:hover {
+    color: var(--themeColor);
+    border-color: var(--themeColor);
+}
+
+.footer .footer-bottom {
+    padding: 15px;
+    text-align: center;
+}
+
+/* 图书列表页 */
+
+.page-bookslist .bookslist-sec1 {
+    background: white;
+    padding: 18px 20px 25px 20px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.page-bookslist .bookslist-sec1 .item {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 5px 10px 12px 10px;
+    border-bottom: 1px #eee dashed;
+}
+
+.page-bookslist .bookslist-sec1 .item .title {
+    margin-right: 10px;
+    margin-top: 7px;
+    white-space: nowrap;
+}
+
+.page-bookslist .bookslist-sec1 .item .all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 142px;
+}
+
+.page-bookslist .bookslist-sec1 .item .other {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 142px);
+}
+
+.page-bookslist .bookslist-sec1 .item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+    margin-top: 7px;
+    margin-right: 4px;
+    white-space: nowrap;
+}
+
+.page-bookslist .bookslist-sec1 .item a.active,
+.page-bookslist .bookslist-sec1 .item a:hover {
+    background: var(--themeColor);
+    color: white;
+}
+
+.page-bookslist .bookslist-sec2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.page-bookslist .bookslist-sec2 a.once {
+    width: calc(20% - 16px);
+    background: white;
+    padding: 12px 12px 50px 12px;
+    position: relative;
+    border: 1px solid #ecebeb;
+    transition: all 0.4s ease;
+}
+
+.page-bookslist .bookslist-sec2 a.once:hover {
+    border-color: var(--themeColor);
+    box-shadow: 0 0 8px var(--themeColor);
+}
+
+.page-bookslist .bookslist-sec2 a.once:hover img {
+    transform: scale(1.1);
+}
+
+.page-bookslist .bookslist-sec2 a.once .price {
+    font-size: 20px;
+    margin-top: 8px;
+    color: var(--themeColor);
+}
+
+.page-bookslist .bookslist-sec2 a.once .title {
+    font-size: 14px;
+    color: black;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.page-bookslist .bookslist-sec2 a.once .info {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #ecebeb;
+    display: flex;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn .collection {
+    width: 40px;
+    height: 100%;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn .collection .iconfont {
+    font-size: 20px;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn .cart {
+    width: calc(100% - 40px);
+    height: 100%;
+    border-left: 1px solid #ecebeb;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn .cart .iconfont {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: var(--themeColor);
+    transform: translateX(-100%);
+    transition: all 0.4s ease;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn span:hover {
+    color: white !important;
+}
+
+.page-bookslist .bookslist-sec2 a.once .btn span:hover::after {
+    transform: translateX(0);
+}
+
+.bookslist-sec3 {
+    background: white;
+    margin-top: 30px;
+}
+
+.bookslist-sec3 .item-all {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookslist-sec3 .item-all a.item {
+    display: block;
+    width: 20%;
+    border-right: 1px solid #dfdfdf;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 15px 10px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.bookslist-sec3 .item-all a.item:nth-child(1),
+.bookslist-sec3 .item-all a.item:nth-child(2),
+.bookslist-sec3 .item-all a.item:nth-child(3),
+.bookslist-sec3 .item-all a.item:nth-child(4),
+.bookslist-sec3 .item-all a.item:nth-child(5) {
+    border-bottom: none !important;
+}
+
+.bookslist-sec3 .item-all a.item:nth-of-type(5n+1) {
+    border-left: 1px solid #dfdfdf;
+}
+
+.bookslist-sec3 .item-all a.item .num {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 26px;
+    height: 22px;
+    background-image: url(../images/ranking-icon.png);
+    background-size: 26px 22px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+}
+
+.bookslist-sec3 .item-all a.item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    background: #eee;
+    transition: all 0.5s ease;
+}
+
+.bookslist-sec3 .item-all a.item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    background: #eee;
+    transition: all 0.5s ease;
+}
+
+.bookslist-sec3 .item-all a.item:hover:before,
+.bookslist-sec3 .item-all a.item:hover:after {
+    width: 50%;
+    opacity: 1;
+}
+
+.bookslist-sec3 .item-all a.item .box-img {
+    padding: 15px;
+    font-size: 0;
+}
+
+.bookslist-sec3 .item-all a.item .box-img img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+
+.bookslist-sec3 .item-all a.item:hover .box-img img {
+    transform: scale(0.8);
+}
+
+.bookslist-sec3 .item-all a.item h3 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    transition: all 0.4s ease;
+}
+
+.bookslist-sec3 .item-all a.item:hover h3 {
+    color: var(--themeColor);
+}
+
+.bookslist-sec3 .item-all a.item .price {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+    color: var(--themeColor);
+}
+
+.bookslist-sec3 .item-all a.item .price span {
+    padding-left: 10px;
+    font-size: 16px;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.bookslist-sec3 {
+    margin-bottom: 30px;
+}
+
+/* 图书列表页 */
+
+/* 图书详情页 */
+
+.page-booksshow .booksshow-top {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px;
+    margin-top: 30px;
+    background: white;
+}
+
+.page-booksshow .booksshow-top .swiper {
+    font-size: 0;
+}
+
+.page-booksshow .booksshow-top .carousel {
+    width: 430px;
+    padding-right: 55px;
+    user-select: none;
+}
+
+.page-booksshow .booksshow-top .carousel .swiper_big {
+    border: 1px solid #ebebeb;
+}
+
+.page-booksshow .booksshow-top .carousel .swiper_big img {
+    width: 100%;
+    height: 375px;
+    object-fit: cover;
+}
+
+.page-booksshow .booksshow-top .carousel .swiper_small {
+    margin-top: 15px;
+}
+
+.page-booksshow .booksshow-top .carousel .swiper_small img {
+    border: 2px solid #ebebeb;
+    width: 100%;
+    height: 64px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.page-booksshow .booksshow-top .carousel .swiper_small .swiper-slide-thumb-active img,
+.page-booksshow .booksshow-top .carousel .swiper_small img:hover {
+    border-color: var(--themeColor);
+}
+
+.page-booksshow .booksshow-top .info {
+    width: calc(100% - 430px);
+}
+
+.page-booksshow .booksshow-top .info h1 {
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.page-booksshow .booksshow-top .info .author {
+    margin-top: 20px;
+}
+
+.page-booksshow .booksshow-top .info .author span {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.page-booksshow .booksshow-top .info .author a {
+    color: #2d8cf0;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.page-booksshow .booksshow-top .info .author a:hover {
+    text-decoration: underline !important;
+}
+
+.page-booksshow .booksshow-top .info .activities {
+    margin-top: 20px;
+}
+
+.page-booksshow .booksshow-top .info .activities .top {
+    height: 35px;
+    font-size: 14px;
+    color: white;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(../images/bar-sale.png);
+    background-size: cover;
+}
+
+.page-booksshow .booksshow-top .info .activities .bottom {
+    height: 64px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    background: #f7f5f1;
+}
+
+.page-booksshow .booksshow-top .info .activities .bottom .title {
+    font-size: 14px;
+    color: black;
+    margin-right: 24px;
+}
+
+.page-booksshow .booksshow-top .info .activities .bottom .price {
+    font-size: 18px;
+    color: var(--themeColor);
+    margin-right: 15px;
+}
+
+.page-booksshow .booksshow-top .info .activities .bottom .old-price {
+    font-size: 14px;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.page-booksshow .booksshow-top .address {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.page-booksshow .booksshow-top .address .title {
+    font-size: 14px;
+    color: black;
+    margin-right: 24px;
+}
+
+.page-booksshow .booksshow-top .address select {
+    border: 1px solid #ebebeb;
+    height: 30px;
+    padding: 0 10px;
+    margin-right: 20px;
+}
+
+.page-booksshow .booksshow-top .number {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.page-booksshow .booksshow-top .number .title {
+    font-size: 14px;
+    color: black;
+    margin-right: 24px;
+}
+
+.page-booksshow .booksshow-top .number .sum {
+    border: 1px solid #ebebeb;
+    display: flex;
+    position: relative;
+}
+
+.page-booksshow .booksshow-top .number .sum input {
+    width: 60px;
+    height: 26px;
+    font-size: 14px;
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.page-booksshow .booksshow-top .number .sum span {
+    width: 25px;
+    height: 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.page-booksshow .booksshow-top .number .sum span:hover {
+    background: var(--themeColor);
+    color: white;
+}
+
+.page-booksshow .booksshow-top .btn-all {
+    display: flex;
+    margin-top: 30px;
+}
+
+.page-booksshow .booksshow-top .btn-all a {
+    display: block;
+    width: 160px;
+    height: 42px;
+    background: var(--themeColor);
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-booksshow .booksshow-top .btn-all a.cart {
+    background: #ffb400;
+}
+
+.page-booksshow .booksshow-top .btn-all a span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.page-booksshow .booksshow-top .btn-all a .iconfont {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.page-booksshow .booksshow-top .btn-all a:hover span,
+.page-booksshow .booksshow-top .btn-all a:hover .iconfont {
+    transform: translateX(100%);
+}
+
+.booksshow-bottom {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+    position: relative;
+}
+
+.booksshow-bottom .books-recommend {
+    width: 200px;
+    margin-right: 20px;
+    position: sticky;
+    top: 10px;
+}
+
+.booksshow-bottom .books-recommend .recommen-title {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background: var(--themeColor);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.booksshow-bottom .books-recommend a.once {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid hsla(0, 0%, 80%, .89);
+    background-color: white;
+    padding: 10px;
+    transition: all 0.4s ease;
+}
+
+.booksshow-bottom .books-recommend a.once:last-child {
+    margin-bottom: 0;
+}
+
+.booksshow-bottom .books-recommend a.once:hover {
+    border-color: var(--themeColor);
+    box-shadow: 0 0 8px var(--themeColor);
+}
+
+.booksshow-bottom .books-recommend a.once .box-img {
+    margin-bottom: 10px;
+}
+
+.booksshow-bottom .books-recommend a.once:hover img {
+    transform: scale(1.1);
+}
+
+.booksshow-bottom .books-recommend a.once .price {
+    color: var(--themeColor);
+    margin-top: 8px;
+}
+
+.booksshow-bottom .books-recommend a.once .title {
+    margin-top: 8px;
+    line-height: 1.5;
+    transition: all 0.4s ease;
+}
+
+.booksshow-bottom .books-recommend a.once:hover .title {
+    color: var(--themeColor);
+}
+
+.booksshow-bottom .books-detail {
+    width: calc(100% - 220px);
+    background: white;
+}
+
+.booksshow-bottom .books-detail ul.cate {
+    display: flex;
+}
+
+.booksshow-bottom .books-detail ul a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px;
+    margin-right: 2px;
+    transition: all 0.4s ease;
+}
+
+.booksshow-bottom .books-detail ul a:hover,
+.booksshow-bottom .books-detail ul li.active a {
+    background: var(--themeColor);
+    color: white;
+}
+
+.booksshow-bottom .books-detail .booksshow-content {
+    border: 1px solid hsla(0, 0%, 80%, .89);
+    padding: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.booksshow-bottom .books-detail .booksshow-content img {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* 图书详情页 */
+
+/* 新闻列表页 */
+
+.page-guide-list {
+    margin-top: 30px;
+}
+
+.page-guide-list .item-all {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page-guide-list .item-all>a {
+    display: block;
+    width: calc(25% - 15px);
+    text-align: center;
+    box-shadow: 0 0 8px #ddd;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.page-guide-list .item-all>a:hover {
+    background: #e0e0e0;
+}
+
+.page-guide-list .item-all>a .webimg {
+    height: 200px;
+    overflow: hidden;
+}
+
+.page-guide-list .item-all>a .webimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-guide-list .item-all>a:hover .webimg img {
+    transform: scale(1.2);
+}
+
+.page-guide-list .item-all>a h4 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+    font-weight: normal;
+}
+
+.page-guide-list .item-all>a p {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #666;
+    position: relative;
+    z-index: 2;
+    line-height: 1.5;
+}
+
+.page-guide-list .item-all>a .num {
+    position: absolute;
+    right: -4px;
+    bottom: -25px;
+    font-size: 80px;
+    color: var(--themeColor2);
+    line-height: 1;
+    font-weight: 600;
+    font-style: italic;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.page-guide-more {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.page-guide-more .left,
+.page-guide-more .right {
+    width: calc(50% - 20px);
+    background: white;
+}
+
+.page-guide-more .item-all {
+    border-top: 1px solid #e0e0e0;
+    padding: 0 15px 15px;
+}
+
+.page-guide-more .item-all .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.4;
+    padding: 15px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.page-guide-more .item-all .item:hover {
+    background: #e0e0e0;
+}
+
+.page-guide-more .item-all .item h4 {
+    width: calc(100% - 100px);
+    font-size: 16px;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+.page-guide-more .item-all .item img {
+    width: 16px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.page-guide-more .item-all .item .date {
+    font-size: 14px;
+    color: #999;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.page-guide-more .item-all .item:hover h4,
+.page-guide-more .item-all .item:hover .date {
+    color: var(--themeColor);
+}
+
+.news-recommend {
+    margin: 30px 0;
+    background: white;
+}
+
+.news-recommend .lb {
+    padding: 0 15px 15px;
+}
+
+.news-recommend .lb .swiper-pagination {
+    bottom: 5px;
+}
+
+.news-recommend .lb a {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.news-recommend .lb a img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.news-recommend .lb a h4 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    line-height: 1.4;
+    font-size: 16px;
+    color: white;
+    background: rgb(0, 0, 0, 0.5);
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+.news-recommend .lb a:hover img {
+    transform: scale(1.1);
+}
+
+.news-recommend .lb a:hover h4 {
+    color: var(--themeColor2);
+}
+
+/* 新闻列表页 */
+
+/* 新闻详情页 */
+
+.page-newsshow {
+    margin-top: 30px;
+}
+
+.page-newsshow .container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.page-newsshow .left {
+    width: 265px;
+    position: relative;
+    background: white;
+    padding: 15px;
+    position: sticky;
+    top: 15px;
+}
+
+.page-newsshow .left .box {
+    position: sticky;
+    top: 100px;
+}
+
+.page-newsshow .left .title {
+    font-size: 16px;
+    padding: 12px 8px;
+    border-left: 4px solid var(--themeColor);
+    background: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.page-newsshow .left .fir-menu li {
+    position: relative;
+}
+
+.page-newsshow .left .fir-menu .iconfont {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: var(--themeColor);
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.page-newsshow .left .fir-menu a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.page-newsshow .left .fir-menu a img {
+    width: 16px;
+    margin-right: 10px;
+}
+
+.page-newsshow .left .fir-menu a:hover {
+    background: var(--themeColor);
+    color: white;
+}
+
+.page-newsshow .right {
+    width: calc(100% - 295px);
+    margin-left: 30px;
+}
+
+.page-newsshow .right .txt {
+    background: white;
+    padding: 30px;
+}
+
+.page-newsshow .right .txt .thumb img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.page-newsshow .right .txt .newsshow-title {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-newsshow .right .txt .newsshow-title h1 {
+    font-size: 24px;
+    font-weight: normal;
+    color: black;
+    padding: 10px 0;
+    line-height: 1.4;
+}
+
+.page-newsshow .right .txt .newsshow-title .date {
+    color: #777;
+    font-size: 14px;
+}
+
+.page-newsshow .right .txt .newsshow-content {
+    font-size: 16px;
+    line-height: 1.5;
+    padding-top: 30px;
+}
+
+.page-newsshow .right .txt .newsshow-content p {
+    margin-bottom: 15px;
+}
+
+.page-newsshow .right .txt .newsshow-content img {
+    margin-bottom: 15px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.page-newsshow .right .newsshow-recommend {
+    margin-top: 30px;
+    background: white;
+
+}
+
+.page-newsshow .right .newsshow-recommend .item-all {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.page-newsshow .right .newsshow-recommend a {
+    width: calc(50% - 10px);
+    height: 32px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-bottom: 6px;
+}
+
+.page-newsshow .right .newsshow-recommend a:hover {
+    color: var(--themeColor);
+}
+
+.page-newsshow .right .newsshow-recommend a span {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* 新闻详情页 */
+
+
+/* 购物车页面 */
+
+.cart-sec1 {
+    margin-top: 30px;
+    padding: 0 15px 30px;
+    background: white;
+    position: relative;
+}
+
+.cart-sec1 table {
+    width: 100%;
+}
+
+.cart-sec1 table tr {
+    transition: all 0.2s ease;
+}
+
+.cart-sec1 table tr.product:hover {
+    background: #f3f3f3;
+}
+
+.cart-sec1 table th {
+    height: 40px;
+    border-bottom: 1px solid #f3f3f3;
+    font-weight: normal;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+}
+
+.cart-sec1 table th.center {
+    text-align: center;
+}
+
+.cart-sec1 table th label {
+    display: flex;
+    align-items: center;
+}
+
+.cart-sec1 table th label input {
+    margin-right: 10px;
+}
+
+.cart-sec1 table td {
+    height: 110px;
+}
+
+.cart-sec1 table td.center {
+    text-align: center;
+}
+
+.cart-sec1 table td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-sec1 table td .bookname {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.cart-sec1 table tr.product:hover .bookname {
+    color: var(--themeColor);
+}
+
+.cart-sec1 table td .sum {
+    display: inline-flex;
+    border: 1px solid #dcdee2;
+}
+
+.cart-sec1 table td .sum span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: #f8f8f9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cart-sec1 table td .sum span:hover {
+    background: var(--themeColor);
+    color: white;
+}
+
+.cart-sec1 table td .sum input {
+    width: 60px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    text-align: center;
+    border-left: 1px solid #dcdee2;
+    border-right: 1px solid #dcdee2;
+}
+
+.cart-sec1 table td a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 28px;
+    color: white;
+    background: var(--themeColor);
+    font-size: 12px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.cart-sec1 table td a.btn span {
+    transition: all 0.2s ease;
+}
+
+.cart-sec1 table td a.btn .iconfont {
+    font-size: 16px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.cart-sec1 table td a.btn:hover {
+    height: 48px;
+    border-radius: 50%;
+}
+
+.cart-sec1 table td a.btn:hover span {
+    opacity: 0;
+}
+
+.cart-sec1 table td a.btn:hover .iconfont {
+    opacity: 1;
+}
+
+.cart-sec1 table tr th:first-child,
+.cart-sec1 table tr td:first-child {
+    padding-left: 15px;
+}
+
+.cart-sec1 .payment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    margin-top: 30px;
+    background: #f3f3f3;
+    font-size: 14px;
+    position: sticky;
+    bottom: 0;
+}
+
+.cart-sec1 .payment .left {
+    padding-left: 15px;
+    display: flex;
+}
+
+.cart-sec1 .payment .left label {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.cart-sec1 .payment .left label input {
+    margin-right: 10px;
+}
+
+.cart-sec1 .payment .left a {
+    transition: all 0.3s ease;
+}
+
+.cart-sec1 .payment .left a:hover {
+    color: var(--themeColor);
+}
+
+.cart-sec1 .payment .right {
+    display: flex;
+    align-items: center;
+}
+
+.cart-sec1 .payment .right>span {
+    margin-right: 50px;
+}
+
+.cart-sec1 .payment .right>span i {
+    display: inline-block;
+    color: var(--themeColor);
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart-sec1 .payment .right a.payment-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #999;
+    color: white;
+    font-size: 16px;
+    width: 130px;
+    height: 58px;
+    position: relative;
+}
+
+.cart-sec1 .payment .right a.payment-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.cart-sec1 .payment .right a.payment-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: var(--themeColor);
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.cart-sec1 .payment .right a.payment-btn:hover:after {
+    width: 100%;
+}
+
+/* 购物车页面 */
+
+/* 登录页 */
+
+.page-login {
+    width: 100%;
+    height: 100vh;
+    min-height: 620px;
+    position: relative;
+    background-image: url(../images/bg.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-login .login-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.page-login .login-header .logo img {
+    height: 60px;
+}
+
+.page-login .login-header .logo img:hover {
+    transform: scale(1.05);
+}
+
+.page-login .login-box {
+    width: 750px;
+    height: 430px;
+    background: white;
+    display: flex;
+    position: relative;
+}
+
+.page-login .login-box .item {
+    width: 50%;
+    padding: 40px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.4s ease 0.4s;
+}
+
+.page-login .login-box .item.active {
+    opacity: 1;
+}
+
+.page-login .login-box .item h1 {
+    font-size: 28px;
+    color: black;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.page-login .login-box .item h1 span {
+    color: var(--themeColor);
+}
+
+.page-login .login-box .item .desc {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.page-login .login-box .item img {
+    height: 100px;
+    margin: 60px 0;
+    display: inline-block;
+}
+
+.page-login .login-box .item .desc span {
+    color: var(--themeColor);
+}
+
+.page-login .login-box .item .btn p {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.page-login .login-box .item .btn a {
+    display: inline-block;
+    width: 80px;
+    height: 32px;
+    background: var(--themeColor);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-login .login-box .item .btn a span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.page-login .login-box .item .btn a .iconfont {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.page-login .login-box .item .btn a:hover span,
+.page-login .login-box .item .btn a:hover .iconfont {
+    transform: translateX(100%);
+}
+
+.page-login .login-box .layer-form {
+    position: absolute;
+    left: 40px;
+    top: -45px;
+    z-index: 2;
+    width: calc(50% - 40px);
+    height: calc(100% + 90px);
+    background: var(--themeColor);
+    background-image: url(../images/bg.png);
+    color: #fff;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.page-login .login-box .layer-form.active {
+    transform: translateX(100%);
+}
+
+.page-login .login-box .layer-form .login-info {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.page-login .login-box .layer-form.active .login-info {
+    transform: translateX(-100%);
+}
+
+.page-login .login-box .layer-form h3 {
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-bottom: 45px;
+}
+
+.page-login .login-box .layer-form input {
+    width: 100%;
+    height: 36px;
+    padding: 10px 2px;
+    background: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.page-login .login-box .layer-form input::placeholder {
+    color: #ddd;
+}
+
+.page-login .login-box .layer-form a.button {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: var(--themeColor);
+    margin-top: 45px;
+    cursor: pointer;
+    border: 1px solid white;
+    background-image: url(../images/bg.png);
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.page-login .login-box .layer-form a.button:hover {
+    background-color: var(--themeColor);
+    color: white;
+}
+
+.page-login .login-box .layer-form .register-info {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.page-login .login-box .layer-form.active .register-info {
+    left: 0;
+}
+
+/* 登录页 */
+
+/* 我的订单页面 */
+
+.page-orderform {
+    margin-top: 30px;
+    /* margin-bottom: 30px; */
+}
+
+.page-orderform .container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.page-orderform .orderform-nav {
+    width: 230px;
+    padding: 15px;
+    background: white;
+    position: sticky;
+    top: 30px;
+}
+
+.page-orderform .orderform-nav .item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.page-orderform .orderform-nav .item:last-child {
+    margin-bottom: 0;
+}
+
+.page-orderform .orderform-nav .item .title {
+    font-size: 15px;
+    color: black;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0 24px;
+}
+
+.page-orderform .orderform-nav .item .title .iconfont {
+    color: var(--themeColor);
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.page-orderform .orderform-nav .item a {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 15px 0 30px;
+    transition: all 0.3s ease;
+}
+
+.page-orderform .orderform-nav .item a:hover {
+    background-color: #EEE;
+    color: var(--themeColor);
+}
+
+.page-orderform .orderform-nav .item a.active {
+    padding-left: 28px;
+    border-left: 2px solid var(--themeColor);
+    background-color: #EEE;
+    color: var(--themeColor);
+}
+
+.page-orderform .orderform-list {
+    width: calc(100% - 260px);
+    margin-left: 30px;
+}
+
+.page-orderform .orderform-list ul.cate {
+    display: flex;
+}
+
+.page-orderform .orderform-list ul.cate a {
+    display: flex;
+    padding: 14px 16px;
+    font-size: 14px;
+    margin-right: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.page-orderform .orderform-list ul.cate a:hover {
+    color: var(--themeColor);
+}
+
+.page-orderform .orderform-list ul.cate li.active a {
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-top: 2px solid var(--themeColor);
+    background: white;
+}
+
+.page-orderform .orderform-list ul.cate li.active a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    z-index: 2;
+    width: 100%;
+    height: 4px;
+    background: white;
+}
+
+.page-orderform .orderform-list ul.cate a span {
+    color: var(--themeColor);
+    margin-left: 4px;
+}
+
+.page-orderform .orderform-list .list-date {
+    padding: 15px;
+    background: white;
+    border: 1px solid #DDD;
+}
+
+.page-orderform .orderform-list .list-date table {
+    width: 100%;
+}
+
+.page-orderform .orderform-list .list-date table .code {
+    display: flex;
+    align-items: center;
+}
+
+.page-orderform .orderform-list .list-date table .code p {
+    margin-right: 30px;
+}
+
+.page-orderform .orderform-list .list-date table .code a {
+    color: var(--themeColor);
+}
+
+.page-orderform .orderform-list .list-date table th {
+    color: black;
+    padding: 10px 15px;
+    font-weight: normal;
+    text-align: left;
+    background: #f5f5f5;
+    height: 40px;
+}
+
+.page-orderform .orderform-list .list-date table img {
+    border: 1px solid #DDD;
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.page-orderform .orderform-list .list-date table td {
+    padding: 15px 10px;
+}
+
+.page-orderform .orderform-list .list-date table .null td {
+    padding: 0;
+    height: 20px;
+    border: none !important;
+}
+
+.page-orderform .orderform-list .list-date table tbody td {
+    border: 1px solid #DDD;
+}
+
+.page-orderform .orderform-list .list-date table .info {
+    display: flex;
+    align-items: center;
+}
+
+.page-orderform .orderform-list .list-date table .info .w67 {
+    width: 67%;
+    display: flex;
+    align-items: center;
+}
+
+.page-orderform .orderform-list .list-date table .info .w14 {
+    width: 14%;
+}
+
+.page-orderform .orderform-list .list-date table .info .w19 {
+    width: 19%;
+}
+
+.page-orderform .orderform-list .list-date table .price {
+    color: var(--themeColor);
+    margin-bottom: 10px;
+}
+
+.page-orderform .orderform-list .list-date table .state {
+    color: #F2862F;
+    margin-bottom: 10px;
+}
+
+.page-orderform .orderform-list .list-date table .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-orderform .orderform-list .list-date table a {
+    transition: all 0.3s ease;
+}
+
+.page-orderform .orderform-list .list-date table a:hover {
+    color: var(--themeColor);
+}
+
+.page-orderform .orderform-list .list-date table a.pay {
+    display: inline-block;
+    padding: 5px 25px;
+    border: 1px solid var(--themeColor);
+    color: var(--themeColor);
+    margin-bottom: 10px;
+}
+
+.page-orderform .orderform-list .list-date table a.pay:hover {
+    background: var(--themeColor);
+    color: white;
+}
+
+
+/* 我的订单页面 */
+
+#roll-top {
+    display: none;
+    position: fixed;
+    right: 22px;
+    bottom: 110px;
+    z-index: 100;
+}
+
+#roll-top .topping {
+
+    width: 45px;
+    height: 45px;
+    background: var(--themeColor);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+#roll-top .topping:hover {
+    transform: scale(1.1);
+}
+
+#roll-top .topping span {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+#roll-top .topping img {
+    height: 20px;
+}
